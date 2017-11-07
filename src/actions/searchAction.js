@@ -1,5 +1,4 @@
 import axios from "axios";
-import { connect } from "react-redux";
 import { SEARCH, RES_SEARCH, ERR_SEARCH } from "./constants";
 
 const ROOT_URL = "https://api.github.com/search/users";

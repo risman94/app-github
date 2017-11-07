@@ -28,7 +28,7 @@ class Home extends Component {
             src="./../assets/github.png"
             style={{ height: "80px", width: "80px" }}
             circle
-          />{" "}
+          />
           Github Users Search
         </h2>
         <FormControl
@@ -53,8 +53,7 @@ class Home extends Component {
                       fontWeight: "bold"
                     }}
                   >
-                    {" "}
-                    {result.login}{" "}
+                    {result.login}
                   </div>
                 </Link>
               </Col>
@@ -68,8 +67,7 @@ class Home extends Component {
 function mapStateToProps(state) {
   return {
     searchData: state.search.all,
-    fetching: state.search.fetching,
-    fetched: state.search.fetched
+    fetching: state.search.fetching
   };
 }
 
