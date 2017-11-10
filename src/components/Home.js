@@ -39,13 +39,27 @@ class Home extends Component {
             this.input = ref;
           }}
         />
-        {fetching && <div> Loading.. </div>}
+        <div
+          className="row"
+          style={{
+            marginTop: "30px",
+            marginBottom: "30px"
+          }}
+        >
+          <div className="col-md-5" />
+          {fetching && <div className="col-md-1 loaders" />}
+          <div className="col-md-5" />
+        </div>
         <Row className="show-grid" style={{ marginTop: "40px" }}>
           {searchData.items &&
             searchData.items.map((result, key) => (
               <Col sm={3} md={3} key={key} style={{ marginBottom: "40px" }}>
                 <Link to={result.login}>
-                  <Image src={result.avatar_url} thumbnail />
+                  <Image
+                    src={result.avatar_url}
+                    style={{ width: "255px", height: "255px" }}
+                    thumbnail
+                  />
                   <div
                     style={{
                       textAlign: "center",

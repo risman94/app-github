@@ -36,7 +36,12 @@ class UserDetails extends Component {
             <img
               src={this.props.user.avatar_url}
               className="img-thumbnail"
-              style={{ marginTop: "10px", marginBottom: "10px" }}
+              style={{
+                marginTop: "10px",
+                marginBottom: "10px",
+                width: "255px",
+                height: "255px"
+              }}
             />
             <h3>{this.props.user.name}</h3>
             <p className="text-muted">{this.props.match.params.username}</p>
@@ -52,24 +57,28 @@ class UserDetails extends Component {
                 {this.props.user.company}
               </p>
             )}
-            <p>
-              <i
-                className="fa fa-map-marker"
-                aria-hidden="true"
-                style={{ padding: "5px" }}
-              />
-              {this.props.user.location}
-            </p>
-            <p>
-              <i
-                className="fa fa-link"
-                aria-hidden="true"
-                style={{ padding: "5px" }}
-              />
-              <a href={this.props.user.blog} target="_blank">
-                {this.props.user.blog}
-              </a>
-            </p>
+            {this.props.user.location && (
+              <p>
+                <i
+                  className="fa fa-map-marker"
+                  aria-hidden="true"
+                  style={{ padding: "5px" }}
+                />
+                {this.props.user.location}
+              </p>
+            )}
+            {this.props.user.blog && (
+              <p>
+                <i
+                  className="fa fa-link"
+                  aria-hidden="true"
+                  style={{ padding: "5px" }}
+                />
+                <a href={this.props.user.blog} target="_blank">
+                  {this.props.user.blog}
+                </a>
+              </p>
+            )}
           </div>
           <div className="col-md-9">
             <ListMenu user={this.props.user} />
