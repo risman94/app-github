@@ -41,7 +41,9 @@ class Repo extends Component {
                     className="card-body"
                     style={{ fontSize: "13px", padding: "0px" }}
                   >
-                    {node.description}
+                    {node.description && node.description.length > 100
+                      ? `${node.description.substring(0, 100)} ...`
+                      : node.description}
                   </div>
                   <div className="card-text" style={{ fontSize: "14px" }}>
                     <ul style={{ paddingLeft: "0px" }}>
@@ -109,7 +111,9 @@ class Repo extends Component {
                     className="card-body"
                     style={{ fontSize: "13px", padding: "0px" }}
                   >
-                    {node.description}
+                    {node.description && node.description.length > 150
+                      ? `${node.description.substring(0, 150)} ...`
+                      : node.description}
                   </div>
                   <div className="card-text" style={{ fontSize: "14px" }}>
                     <ul style={{ paddingLeft: "0px" }}>

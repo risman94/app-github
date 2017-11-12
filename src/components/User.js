@@ -54,7 +54,9 @@ class UserDetails extends Component {
                   aria-hidden="true"
                   style={{ padding: "5px" }}
                 />
-                {this.props.user.company}
+                {this.props.user.company.length > 20
+                  ? `${this.props.user.company.substring(0, 20)} ...`
+                  : this.props.user.company}
               </p>
             )}
             {this.props.user.location && (
@@ -64,7 +66,9 @@ class UserDetails extends Component {
                   aria-hidden="true"
                   style={{ padding: "5px" }}
                 />
-                {this.props.user.location}
+                {this.props.user.location.length > 30
+                  ? `${this.props.user.location.substring(0, 30)} ...`
+                  : this.props.user.location}
               </p>
             )}
             {this.props.user.blog && (
@@ -75,7 +79,9 @@ class UserDetails extends Component {
                   style={{ padding: "5px" }}
                 />
                 <a href={this.props.user.blog} target="_blank">
-                  {this.props.user.blog}
+                  {this.props.user.blog.length > 30
+                    ? `${this.props.user.blog.substring(0, 30)} ...`
+                    : this.props.user.blog}
                 </a>
               </p>
             )}

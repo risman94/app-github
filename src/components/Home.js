@@ -54,7 +54,7 @@ class Home extends Component {
           {searchData.items &&
             searchData.items.map((result, key) => (
               <Col sm={3} md={3} key={key} style={{ marginBottom: "40px" }}>
-                <Link to={result.login}>
+                <Link to={`user/${result.login}`}>
                   <Image
                     src={result.avatar_url}
                     style={{ width: "255px", height: "255px" }}
