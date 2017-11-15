@@ -1,7 +1,17 @@
-import { USER, ERR_USER, USER_REPO, RES_USER } from "../actions/constants";
+import {
+  USER,
+  ERR_USER,
+  USER_REPO,
+  RES_USER,
+  USER_FOLLOWERS,
+  USER_FOLLOWING
+} from "../actions/constants";
+
 const INTIAL_STATE = {
   user: [],
   repos: [],
+  followers: [],
+  following: [],
   fetching: false,
   fetched: false,
   error: null
@@ -27,6 +37,20 @@ export default function(state = INTIAL_STATE, action) {
         fetching: false,
         fetched: true,
         user: action.payload.data
+      };
+    case USER_FOLLOWERS:
+      return {
+        ...state,
+        fetching: false,
+        fetched: true,
+        followers: action.payload.data
+      };
+    case USER_FOLLOWING:
+      return {
+        ...state,
+        fetching: false,
+        fetched: true,
+        following: action.payload.data
       };
     case ERR_USER:
       return {

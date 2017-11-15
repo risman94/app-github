@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import createHistory from "history/createBrowserHistory";
-import { fetchUserRepos, fetchUser } from "../actions/userAction";
+import { fetchUserFollowers, fetchUser } from "../actions/userAction";
 import ListMenu from "./ListMenu";
 
 class Followers extends Component {
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.username);
-    this.props.fetchUserRepos(this.props.match.params.username);
+    this.props.fetchUserFollowers(this.props.match.params.username);
   }
   onNavigateHome() {
     const history = createHistory;
@@ -15,7 +15,7 @@ class Followers extends Component {
   }
   render() {
     console.log(this.props.user, "user");
-    console.log(this.props.repos, "repos");
+    console.log(this.props.followers, "followers");
     return (
       <div className="container">
         <div className="row">
@@ -86,7 +86,9 @@ class Followers extends Component {
           </div>
           <div className="col-md-9">
             <ListMenu user={this.props.user} />
-            <p>test dulu followers</p>
+            {this.props.followers.map((node, index) => (
+              <div key={index}>{node.login}</div>
+            ))}
           </div>
         </div>
       </div>
@@ -96,11 +98,10 @@ class Followers extends Component {
 function mapStateToProps(state) {
   return {
     user: state.userDetails.user,
-    repos: state.userDetails.repos,
-    fetching: state.userDetails.fetching
+    followers: state.userDetails.followers
   };
 }
 
-export default connect(mapStateToProps, { fetchUserRepos, fetchUser })(
+export default connect(mapStateToProps, { fetchUserFollowers, fetchUser })(
   Followers
 );

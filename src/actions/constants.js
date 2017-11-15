@@ -7,3 +7,7 @@ export const ERR_USER = "ERR_USER";
 export const USER_REPO = "USER_REPO";
 // action type to get user
 export const RES_USER = "RES_USER";
+// action type to get followers
+export const USER_FOLLOWERS = "USER_FOLLOWERS";
+// action type to get following
+export const USER_FOLLOWING = "USER_FOLLOWING";
