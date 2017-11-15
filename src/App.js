@@ -2,16 +2,18 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
-import Home from "./components/Home";
+import Search from "./components/Search";
 import UserDetails from "./components/User";
+import Repositori from "./components/Repositori";
 
 const FourOFour = () => <h1> Eror 404, Not found... </h1>;
 
 const App = () => (
   <Provider store={store}>
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={Search} />
       <Route path="/user/:username" component={UserDetails} />
+      <Route path="/repositori/:username" component={Repositori} />
       <Route component={FourOFour} />
     </Switch>
   </Provider>

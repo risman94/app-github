@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class ListMenu extends Component {
   render() {
@@ -11,9 +12,11 @@ class ListMenu extends Component {
     return (
       <div style={{ marginTop: "10px" }}>
         <ul style={{ paddingBottom: "40px" }}>
-          <li style={styleli}>Overview</li>
           <li style={styleli}>
-            Repositories
+            <Link to={`/user/${this.props.user.login}`}>Overview</Link>
+          </li>
+          <li style={styleli}>
+            <Link to={`/repositori/${this.props.user.login}`}>Repositori</Link>
             <span
               className="badge badge-secondary"
               style={{ marginLeft: "5px" }}

@@ -5,7 +5,7 @@ import { search } from "../actions/searchAction";
 import { Link } from "react-router-dom";
 
 let timeoutId;
-class Home extends Component {
+class Search extends Component {
   constructor(props) {
     super(props);
 
@@ -85,4 +85,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { search })(Home);
+export default connect(mapStateToProps, { search })(Search);
