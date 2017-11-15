@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import createHistory from "history/createBrowserHistory";
 import { fetchUserFollowing, fetchUser } from "../actions/userAction";
+import { Link } from "react-router-dom";
 import ListMenu from "./ListMenu";
 
 class Following extends Component {
@@ -87,7 +88,29 @@ class Following extends Component {
           <div className="col-md-9">
             <ListMenu user={this.props.user} />
             {this.props.following.map((node, index) => (
-              <div key={index}>{node.login}</div>
+              <div key={index}>
+                <div
+                  style={{
+                    textAlign: "center",
+                    float: "left",
+                    padding: "10px"
+                  }}
+                  className="col-md-3 thumbnail"
+                >
+                  <Link to={`/user/${node.login}`} style={{ color: "black" }}>
+                    <img
+                      src={node.avatar_url}
+                      style={{
+                        width: "150px",
+                        height: "135px",
+                        marginBottom: "10px",
+                        borderRadius: "10px"
+                      }}
+                    />
+                    <h5>{node.login}</h5>
+                  </Link>
+                </div>
+              </div>
             ))}
           </div>
         </div>
