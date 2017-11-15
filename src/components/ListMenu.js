@@ -9,14 +9,30 @@ class ListMenu extends Component {
       paddingRight: "50px",
       paddingTop: "10px"
     };
+    var link = {
+      color: "black",
+      textDecoration: "none"
+    };
     return (
       <div style={{ marginTop: "10px" }}>
         <ul style={{ paddingBottom: "40px" }}>
           <li style={styleli}>
-            <Link to={`/user/${this.props.user.login}`}>Overview</Link>
+            <Link
+              to={`/user/${this.props.user.login}`}
+              style={link}
+              className="link"
+            >
+              Overview
+            </Link>
           </li>
           <li style={styleli}>
-            <Link to={`/repositori/${this.props.user.login}`}>Repositori</Link>
+            <Link
+              to={`/repositori/${this.props.user.login}`}
+              style={link}
+              className="link"
+            >
+              Repositori
+            </Link>
             <span
               className="badge badge-secondary"
               style={{ marginLeft: "5px" }}
@@ -24,9 +40,17 @@ class ListMenu extends Component {
               {this.props.user.public_repos}
             </span>
           </li>
-          <li style={styleli}>Star</li>
+          <li style={styleli} className="nav-link disabled">
+            Star
+          </li>
           <li style={styleli}>
-            Followers
+            <Link
+              to={`/followers/${this.props.user.login}`}
+              style={link}
+              className="link"
+            >
+              Followers
+            </Link>
             <span
               className="badge badge-secondary"
               style={{ marginLeft: "5px" }}
@@ -35,7 +59,13 @@ class ListMenu extends Component {
             </span>
           </li>
           <li style={styleli}>
-            Following
+            <Link
+              to={`/following/${this.props.user.login}`}
+              style={link}
+              className="link"
+            >
+              Following
+            </Link>
             <span
               className="badge badge-secondary"
               style={{ marginLeft: "5px" }}
