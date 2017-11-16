@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 class ListMenu extends Component {
   render() {
@@ -17,61 +17,65 @@ class ListMenu extends Component {
       <div style={{ marginTop: "10px" }}>
         <ul style={{ paddingBottom: "40px" }}>
           <li style={styleli}>
-            <Link
+            <NavLink
               to={`/user/${this.props.user.login}`}
               style={link}
               className="link"
+              activeClassName="active"
             >
               Overview
-            </Link>
+            </NavLink>
           </li>
           <li style={styleli}>
-            <Link
+            <NavLink
               to={`/repositori/${this.props.user.login}`}
               style={link}
               className="link"
+              activeClassName="active"
             >
               Repositori
-            </Link>
-            <span
-              className="badge badge-secondary"
-              style={{ marginLeft: "5px" }}
-            >
-              {this.props.user.public_repos}
-            </span>
+              <span
+                className="badge badge-secondary"
+                style={{ marginLeft: "5px" }}
+              >
+                {this.props.user.public_repos}
+              </span>
+            </NavLink>
           </li>
           <li style={styleli} className="nav-link disabled">
             Star
           </li>
           <li style={styleli}>
-            <Link
+            <NavLink
               to={`/followers/${this.props.user.login}`}
               style={link}
               className="link"
+              activeClassName="active"
             >
               Followers
-            </Link>
-            <span
-              className="badge badge-secondary"
-              style={{ marginLeft: "5px" }}
-            >
-              {this.props.user.followers}
-            </span>
+              <span
+                className="badge badge-secondary"
+                style={{ marginLeft: "5px" }}
+              >
+                {this.props.user.followers}
+              </span>
+            </NavLink>
           </li>
           <li style={styleli}>
-            <Link
+            <NavLink
               to={`/following/${this.props.user.login}`}
               style={link}
               className="link"
+              activeClassName="active"
             >
               Following
-            </Link>
-            <span
-              className="badge badge-secondary"
-              style={{ marginLeft: "5px" }}
-            >
-              {this.props.user.following}
-            </span>
+              <span
+                className="badge badge-secondary"
+                style={{ marginLeft: "5px" }}
+              >
+                {this.props.user.following}
+              </span>
+            </NavLink>
           </li>
         </ul>
         <hr />
