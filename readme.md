@@ -2,8 +2,8 @@
  
 doc [github api](https://developer.github.com/v3/)
 
-git clone : 
-'https://github.com/risman94/awesome-jr-frontend--Kamarul-Risman-.git'
+git clone 
+https://github.com/risman94/app-github.git
 
 open terminal and instal all package
 ```
