@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { search } from "../actions/searchAction";
 import { Link } from "react-router-dom";
 import "./../style.css";
+import icon_github from "./../assets/github.png";
 
 let timeoutId;
 class Search extends Component {
@@ -26,7 +27,7 @@ class Search extends Component {
       <div className="container" style={{ paddingTop: "10px" }}>
         <h2>
           <Image
-            src="./../assets/github.png"
+            src={icon_github}
             style={{ height: "80px", width: "80px" }}
             circle
           />
