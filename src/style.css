@@ -1,0 +1,41 @@
+.loaders {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  width: 80px;
+  height: 95px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  text-align: center !important;
+}
+
+.link:hover {
+  padding-bottom: 21px;
+  display: inline-block;
+  border-bottom: 1.5px solid rgb(206, 201, 201);
+}
+
+.active {
+  padding-bottom: 21px;
+  display: inline-block;
+  border-bottom: 1.5px solid rgb(204, 70, 70);
+  font-weight: bold;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

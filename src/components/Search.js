@@ -3,6 +3,7 @@ import { FormControl, Image, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 import { search } from "../actions/searchAction";
 import { Link } from "react-router-dom";
+import "./../style.css";
 
 let timeoutId;
 class Search extends Component {
